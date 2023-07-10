@@ -42,7 +42,7 @@ counter cnt(
 .rst_n(rst_n_tb),
 .num_i(num_i_tb),
 .of(of_tb),
-.cnt(of_tb)
+.cnt(cnt_tb)
 );
 
 endmodule

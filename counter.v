@@ -16,6 +16,13 @@ always @(posedge clk) begin:RESET
 	if(!rst_n) begin 
 		of <= 1'b0;
 		cnt <= 8'b00000000;
+		next_state = A;
+	end
+	else begin
+	  	if(cnt == 8'b11111111) 
+			of <= 1'b1;
+		if(!of && current_state == E)
+			cnt <= cnt + 1'b1;
 	end
 end
 always @(posedge clk) begin:FSM
@@ -44,11 +51,11 @@ endcase
 
 end
 
-always @(posedge clk) begin: COUNTER
-	if(cnt == 8'b11111111) 
-		of <= 1'b1;
-	if(!of && current_state == E)
-		cnt <= cnt + 1'b1;
-end
+// always @(posedge clk) begin: COUNTER
+// 	if(cnt == 8'b11111111) 
+// 		of <= 1'b1;
+// 	if(!of && current_state == E)
+// 		cnt <= cnt + 1'b1;
+// end
 endmodule
 

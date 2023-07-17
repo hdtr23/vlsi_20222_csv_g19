@@ -17,12 +17,14 @@ initial begin
 end
 
 initial begin
+    rst_n_tb = 0;
+    #10;
     rst_n_tb = 1;
     #1000;
     rst_n_tb = 0;
     #10;
     rst_n_tb = 1;
-    #5300;
+    #11000;
     rst_n_tb = 0;
     #10;
     rst_n_tb = 1;
@@ -30,6 +32,13 @@ end
 
 initial begin
     num_i_tb = 0;
+    #10;
+    num_i_tb = 1;
+    #20;
+    num_i_tb = 0;
+    #20;
+    num_i_tb = 1;
+    #10;
     forever begin
         num_i_tb = !num_i_tb;
         #10;

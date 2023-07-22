@@ -4,17 +4,20 @@ module counter(
 	input num_i,
 	output reg of,
 	output reg [7:0] cnt
+
 );
 parameter A=2'b00, B=2'b01, C=2'b11, D=2'b10; 
+
 reg [1:0] next_state;
 reg [1:0] current_state;
 reg detected;
-reg [3:0] tram;
-reg [3:0] chuc;
-reg [3:0] donvi;
-wire [6:0] otram;
-wire [6:0] ochuc;
-wire [6:0] odonvi;
+// reg [3:0] tram;
+// reg [3:0] chuc;
+// reg [3:0] donvi;
+
+// wire [6:0] otram;
+// wire [6:0] ochuc;
+// wire [6:0] odonvi;
 
 always @(posedge clk or negedge rst_n) begin:RESET
 	if(!rst_n) begin 
@@ -28,9 +31,9 @@ always @(posedge clk or negedge rst_n) begin:RESET
 		else if(detected == 1)
 			cnt <= cnt +1;
 		current_state <= next_state;
-		tram <= cnt / 100;
-		chuc <= (cnt % 100) / 10;
-		donvi <= (cnt % 100) % 10;
+		// tram <= cnt / 100;
+		// chuc <= (cnt % 100) / 10;
+		// donvi <= (cnt % 100) % 10;
 	end
 end
 always @(num_i or current_state) begin:FSM
@@ -64,8 +67,8 @@ case(current_state)
 	default: next_state = A;
 endcase
 end
-	led7seg ledtram(.inled(tram), .outled(otram));
-	led7seg ledchuc(.inled(chuc), .outled(ochuc));
-	led7seg leddonvi(.inled(donvi), .outled(odonvi));
+	// led7seg ledtram(.inled(tram), .outled(otram));
+	// led7seg ledchuc(.inled(chuc), .outled(ochuc));
+	// led7seg leddonvi(.inled(donvi), .outled(odonvi));
 endmodule
 

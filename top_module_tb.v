@@ -54,7 +54,7 @@ top_module tb(
 .i_num_i(num_i_tb),
 .o_tram(otram),
 .o_chuc(ochuc),
-.o_donvi(odonvi),
+.o_dv(odonvi),
 .o_of(of_tb)
 );
 

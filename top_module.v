@@ -10,6 +10,7 @@ module top_module (
 wire [3:0] tram;
 wire [3:0] chuc;
 wire [3:0] dv;
+wire [7:0] c_cnt;
 
 counter count(
 .i_clk(i_clk),

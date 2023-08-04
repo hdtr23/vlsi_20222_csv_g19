@@ -47,11 +47,11 @@ end
 
 
 counter cnt(
-.clk(clk_tb),
-.rst_n(rst_n_tb),
-.num_i(num_i_tb),
-.of(of_tb),
-.cnt(cnt_tb)
+.i_clk(clk_tb),
+.i_rst_n(rst_n_tb),
+.i_num_i(num_i_tb),
+.o_of(of_tb),
+.c_cnt(cnt_tb)
 );
 
 endmodule

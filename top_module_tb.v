@@ -49,13 +49,13 @@ end
 
 
 top_module tb(
-.clk(clk_tb),
-.rst_n(rst_n_tb),
-.num_i(num_i_tb),
-.otram(otram),
-.ochuc(ochuc),
-.odonvi(odonvi),
-.of(of_tb)
+.i_clk(clk_tb),
+.i_rst_n(rst_n_tb),
+.i_num_i(num_i_tb),
+.o_tram(otram),
+.o_chuc(ochuc),
+.o_donvi(odonvi),
+.o_of(of_tb)
 );
 
 endmodule

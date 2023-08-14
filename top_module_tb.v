@@ -22,7 +22,7 @@ initial begin
     rst_n_tb = 0;
     #10;
     rst_n_tb = 1;
-    #1000;
+    #150;
     rst_n_tb = 0;
     #10;
     rst_n_tb = 1;
@@ -33,14 +33,12 @@ initial begin
 end
 
 initial begin
-    num_i_tb = 0;
-    #10;
-    num_i_tb = 1;
-    #20;
-    num_i_tb = 0;
-    #20;
     num_i_tb = 1;
     #10;
+    num_i_tb = 1;
+    #10;
+    num_i_tb = 0;
+    #20;	
     forever begin
         num_i_tb = !num_i_tb;
         #10;
